@@ -1,0 +1,42 @@
+{
+  "name": "mountainfyi-embed",
+  "version": "1.0.0",
+  "description": "Embed MountainFYI widgets — mountain cards, elevation badges, difficulty grades. 2,000 mountains. Zero dependencies, Shadow DOM, 4 themes.",
+  "main": "dist/embed.min.js",
+  "module": "dist/embed.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mountain",
+    "elevation",
+    "summit",
+    "climbing",
+    "difficulty",
+    "altitude",
+    "embed",
+    "widget",
+    "mountainfyi",
+    "mountainfyi.com",
+    "shadow-dom",
+    "zero-dependencies",
+    "fyipedia",
+    "geofyi"
+  ],
+  "homepage": "https://widget.mountainfyi.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fyipedia/mountainfyi-embed"
+  },
+  "bugs": {
+    "url": "https://github.com/fyipedia/mountainfyi-embed/issues"
+  },
+  "license": "MIT",
+  "author": "FYIPedia <dev@fyipedia.com>",
+  "publishConfig": {
+    "access": "public"
+  }
+}
