@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# MountainFYI Embed Widget
+# Main site: https://mountainfyi.com
+# Widget docs: https://widget.mountainfyi.com
+# npm: https://www.npmjs.com/package/mountainfyi-embed
