@@ -277,7 +277,7 @@ function renderError(container, message, config) {
   container.innerHTML = `
     <div class="geofyi-error">
       <p>${message}</p>
-      <a href="https://${config.domain}" target="_blank" rel="noopener">
+      <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">
         Visit ${config.name}
       </a>
     </div>
@@ -285,7 +285,7 @@ function renderError(container, message, config) {
 }
 var externalLinkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 function poweredByHTML(config) {
-  return `<span class="geofyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="noopener">${config.name}</a></span>`;
+  return `<span class="geofyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">${config.name}</a></span>`;
 }
 
 // src/api.ts
@@ -396,7 +396,7 @@ function renderCityCard(data, config) {
       ${kvRow("Timezone", timezone)}
       ${kvRow("Coordinates", `${lat.toFixed(4)}, ${lon.toFixed(4)}`, true)}
     </div>
-    <div class="geofyi-view-link"><a href="${cityUrl}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+    <div class="geofyi-view-link"><a href="${cityUrl}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
     ${poweredByHTML(config)}
   `;
 }
@@ -476,7 +476,7 @@ function renderMountainCard(data, config) {
       ${kvRow("Difficulty", `Grade ${difficultyGrade} \u2014 ${diff.label}`)}
       ${routeCount > 0 ? kvRow("Routes", String(routeCount)) : ""}
     </div>
-    <div class="geofyi-view-link"><a href="${url}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+    <div class="geofyi-view-link"><a href="${url}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
     ${poweredByHTML(config)}
   `;
 }
@@ -561,7 +561,7 @@ function renderEarthquakeCard(data, config) {
       ${feltCount ? kvRow("Felt Reports", String(feltCount)) : ""}
       ${significance ? kvRow("Significance", String(significance)) : ""}
     </div>
-    <div class="geofyi-view-link"><a href="${url}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+    <div class="geofyi-view-link"><a href="${url}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
     ${poweredByHTML(config)}
   `;
 }
@@ -603,7 +603,7 @@ function renderPostalCard(data, config) {
       ${area ? kvRow("Land Area", area) : ""}
       ${kvRow("Timezone", timezone)}
     </div>
-    <div class="geofyi-view-link"><a href="${url}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+    <div class="geofyi-view-link"><a href="${url}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
     ${poweredByHTML(config)}
   `;
 }
@@ -702,7 +702,7 @@ async function initGlossary(el, config) {
     root.innerHTML = `
       <div class="geofyi-glossary-term">${esc(term)}</div>
       <div class="geofyi-glossary-def">${esc(definition)}</div>
-      <div class="geofyi-view-link"><a href="${url}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+      <div class="geofyi-view-link"><a href="${url}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
       ${poweredByHTML(config)}
     `;
     if (!shouldSkipSnippet(el)) {
@@ -802,7 +802,7 @@ function initSearch(el, config) {
           const slug = String((_i = (_h = item.slug) != null ? _h : item.code) != null ? _i : "");
           const url = `https://${config.domain}/${config.entitySlug}/${slug}/`;
           return `
-            <a class="geofyi-search-item" href="${url}" target="_blank" rel="noopener">
+            <a class="geofyi-search-item" href="${url}" target="_blank" rel="nofollow noopener">
               <span>${esc(name)}${subtitle ? ` <small style="color:var(--muted)">${esc(subtitle)}</small>` : ""}</span>
               ${externalLinkIcon}
             </a>
